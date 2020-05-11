@@ -1,12 +1,24 @@
 
 package ec.edu.ups.Modelo;
+import ec.edu.ups.Modelo.Telefono;
 public class Usuario {
+    private Telefono telefono;
     private String cedula;
     private String nombre;
     private String apellido;
     private String correo;
     private String contrasena;
 
+    public Usuario() {
+    }
+
+    public Telefono getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(Telefono telefono) {
+        this.telefono = telefono;
+    }
     public String getCedula() {
         return cedula;
     }
