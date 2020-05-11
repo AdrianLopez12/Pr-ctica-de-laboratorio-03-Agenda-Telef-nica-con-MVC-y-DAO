@@ -1,33 +1,37 @@
 
 package ec.edu.ups.Modelo;
 import ec.edu.ups.Modelo.Telefono;
+import java.util.List;
 public class Usuario {
-    private Telefono[] telefono;
+    //private Telefono telefono;
     private String cedula;
     private String nombre;
     private String apellido;
     private String correo;
     private String contrasena;
-
+  List<Telefono> telefono;
     public Usuario() {
     }
 
-    public Usuario(Telefono[] telefono, String cedula, String nombre, String apellido, String correo, String contrasena) {
-        this.telefono = telefono;
+    public Usuario(String cedula, String nombre, String apellido, String correo, String contrasena, List<Telefono> telefono) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.contrasena = contrasena;
+        this.telefono = telefono;
     }
 
-    public Telefono[] getTelefono() {
+    
+    public List<Telefono> getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Telefono[] telefono) {
+    public void setTelefono(List<Telefono> telefono) {
         this.telefono = telefono;
     }
+
+   
 
    
     public String getCedula() {
