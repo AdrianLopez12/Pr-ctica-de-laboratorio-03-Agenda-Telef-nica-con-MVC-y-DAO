@@ -5,6 +5,9 @@ public class Telefono {
     private String tipo;
     private String operadora;
 
+    public Telefono() {
+    }
+
     public int getCodigo() {
         return codigo;
     }
