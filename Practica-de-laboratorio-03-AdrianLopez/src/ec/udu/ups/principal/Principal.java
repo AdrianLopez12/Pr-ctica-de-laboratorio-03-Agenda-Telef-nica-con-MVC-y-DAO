@@ -37,8 +37,8 @@ ImpleDao clienteDao=new ImpleDao();
                 String correo = leer.next();
                 System.out.println("Ingrese contrasena");
                 String contrasena1 = leer.next();
-                boolean r = clienteDao.validarUsuario(correo, contrasena1);
-                if (r == true) {
+                Usuario r = clienteDao.validarUsuario(correo, contrasena1);
+                if (r !=null) {
 do{
                     System.out.println("Usuario valido");
                     System.out.println("1) Registrar telefono");
@@ -47,23 +47,8 @@ do{
                     System.out.println("4) listar sus telefonos");
                     op = leer.nextByte();
                     if (op == 1) {
-                        System.out.println("cuantos telefonos va a registrar?");
-                        byte nt=leer.nextByte();
-                        List <Telefono> telefono=new ArrayList<>();
-                        for (int i = 0; i < nt; i++) {
-                            System.out.println("Ingrese codigo");
-                        int codigo=leer.nextInt();
-                        System.out.println("Ingrese numero");
-                        String numero=leer.next();
-                        System.out.println("Ingrese tipo");
-                        String tipo=leer.next();
-                        System.out.println("Ingrese operadora");
-                        String operador=leer.next();
-                        Telefono tele=new Telefono(codigo, numero, tipo, operador);
                         
-                        telefono.add(tele);
-                        }
-                        clienteDao.actualizarUsuario(telefono, correo);
+                        clienteDao.actualizarUsuario(r);
                         
                         
                     }
@@ -75,7 +60,8 @@ do{
                         op=5;
                     }
                     if (op == 4) {
-                         clienteDao.mostrarTelefono(correo);
+                        System.out.println(r.getTelefono().get(0).getCodigo());
+                         clienteDao.mostrarTelefono(r);
                     }
 }while(op!=5);
                 }
