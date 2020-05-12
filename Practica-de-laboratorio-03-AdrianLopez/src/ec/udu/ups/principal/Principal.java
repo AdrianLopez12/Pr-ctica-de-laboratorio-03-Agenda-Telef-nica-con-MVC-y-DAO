@@ -3,11 +3,12 @@ package ec.udu.ups.principal;
 import ec.edu.ups.Modelo.Telefono;
 import java.util.Scanner;
 import ec.edu.ups.Modelo.Usuario;
-import ec.edu.ups.controlador.Controlador;
 import java.util.ArrayList;
 import java.util.List;
 import ec.eud.ups.dao.IClienteDao;
 import ec.eud.ups.dao.ImpleDao;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Principal {
 
@@ -16,96 +17,14 @@ public class Principal {
     List<Usuario> usuario = new ArrayList<>();
 
     public static void main(String[] args) {
-        IClienteDao clienteDao = new ImpleDao() {
-            @Override
-            public boolean validarUsuario(String correo, String contrasena) {
-
-                if (usuario.size() != 0) {
-
-                    for (int i = 0; i < usuario.size(); i++) {
-                        if (usuario.get(i).getCorreo().equalsIgnoreCase(correo) && usuario.get(i).getContrasena().equals(contrasena)) {
-
-                            return true;
-
-                        }
-                    }
-
-                }
-                System.out.println("Usuario invalido");
-                return false;
-
-            }
-
-            @Override
-            public void crearUsuario() {
-                System.out.println("*****Registro usuario*****");
-                System.out.println("ingrese nombre de usuario");
-                String nombre = leer.next();
-                System.out.println("Ingrese cedula");
-                String cedula = leer.next();
-                System.out.println("Ingrese apellido");
-                String apellido = leer.next();
-                System.out.println("Ingrese correo");
-                String correo = leer.next();
-                System.out.println("Ingrese contrasena");
-                String contrasena = leer.next();
-
-                List<Telefono> telf = null;
-                Usuario usuario1 = new Usuario(cedula, nombre, apellido, correo, contrasena, telf);
-                this.usuario.add(usuario1);
-
-                
-            }
-
-            @Override
-            public List<Usuario> ObtenerUsuarios() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void mostrarTelefono(String correo) {
-                for (int i = 0; i < this.usuario.size(); i++) {
-                        if (this.usuario.get(i).getCorreo().equalsIgnoreCase(correo)) {
-                            for (int j = 0; j < usuario.get(i).getTelefono().size(); j++) {
-                                System.out.println("Telefono "+j);
-                                System.out.print(" Codigo "+usuario.get(i).getTelefono().get(j).getCodigo());
-                                System.out.print(" Numreo "+usuario.get(i).getTelefono().get(j).getNumero());
-                                System.out.print(" Operadora "+usuario.get(i).getTelefono().get(j).getOperadora());
-                                System.out.print(" Tipo "+usuario.get(i).getTelefono().get(j).getTipo());
-                                System.out.println("");
-                            }
-                           i=usuario.size();
-                        }
-                    }
-            }
-
-            @Override
-            public void actualizarUsuario(List<Telefono> telef, String correo) {
-                for (int i = 0; i < usuario.size(); i++) {
-                        if (usuario.get(i).getCorreo().equalsIgnoreCase(correo)) {
-                             Usuario usuario1 = new Usuario(usuario.get(i).getCedula(), usuario.get(i).getNombre(), usuario.get(i).getApellido(), usuario.get(i).getCorreo(), usuario.get(i).getContrasena(), telef);  
-                            usuario.set(i, usuario1);
-                             i=usuario.size();
-                             
-                        }
-                    }
-               
-            }
-
-            @Override
-            public void eliminarUsuario(String correo) {
-               for (int i = 0; i < usuario.size(); i++) {
-                        if (usuario.get(i).getCorreo().equalsIgnoreCase(correo)) {
-                             
-                            usuario.remove(i);
-                             
-                        }
-                    }
-            }
-        };
+        
+ImpleDao clienteDao=new ImpleDao();
+        
+        
         do {
             System.out.println("1) Registrarse");
             System.out.println("2) Iniciar secion");
+            System.out.println("3) mostrar numeros de telefono por cedula");
             op = leer.nextByte();
             if (op == 1) {
 
@@ -114,7 +33,6 @@ public class Principal {
             }
             if (op == 2) {
 
-                Controlador controlador = new Controlador();
                 System.out.println("ingrese correo");
                 String correo = leer.next();
                 System.out.println("Ingrese contrasena");
@@ -163,7 +81,11 @@ do{
                 }
 
             }
+            if(op==3){
+                System.out.println("ingrese correo");
+                String correo=leer.next();
+            }
 
-        } while (op != 3);
+        } while (op != 4);
     }
 }
