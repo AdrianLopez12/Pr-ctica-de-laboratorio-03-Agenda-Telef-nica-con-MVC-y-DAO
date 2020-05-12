@@ -5,7 +5,7 @@ public interface IClienteDao {
     public boolean validarUsuario(String correo, String contrasena);
     public void crearUsuario();
     public List<Usuario> ObtenerUsuarios();
-    public Usuario obtenerUsuario(int id);
-    public void actualizarUsuario(Usuario usuario);
+    public void mostrarTelefono(String correo);
+    public void actualizarUsuario(List<Telefono> usuario, String correo);
     public void eliminarUsuario(Usuario usuario);
 }

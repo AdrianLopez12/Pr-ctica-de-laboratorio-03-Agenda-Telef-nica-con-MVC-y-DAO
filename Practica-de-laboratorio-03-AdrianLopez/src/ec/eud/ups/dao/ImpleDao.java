@@ -10,6 +10,9 @@ public abstract class ImpleDao implements IClienteDao{
     public List<Usuario> usuario=new ArrayList<>();
 Scanner leer=new Scanner(System.in);
 
+  
+
+ 
  
  
     
