@@ -7,5 +7,5 @@ public interface IClienteDao {
     public List<Usuario> ObtenerUsuarios();
     public void mostrarTelefono(String correo);
     public void actualizarUsuario(List<Telefono> usuario, String correo);
-    public void eliminarUsuario(Usuario usuario);
+    public void eliminarUsuario(String correo);
 }

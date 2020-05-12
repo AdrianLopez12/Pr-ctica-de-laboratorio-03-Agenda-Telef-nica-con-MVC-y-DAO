@@ -31,6 +31,7 @@ public class Principal {
                     }
 
                 }
+                System.out.println("Usuario invalido");
                 return false;
 
             }
@@ -66,10 +67,12 @@ public class Principal {
                 for (int i = 0; i < this.usuario.size(); i++) {
                         if (this.usuario.get(i).getCorreo().equalsIgnoreCase(correo)) {
                             for (int j = 0; j < usuario.get(i).getTelefono().size(); j++) {
-                                System.out.println(usuario.get(i).getTelefono().get(j).getCodigo());
-                                System.out.println(usuario.get(i).getTelefono().get(j).getNumero());
-                                System.out.println(usuario.get(i).getTelefono().get(j).getOperadora());
-                                System.out.println(usuario.get(i).getTelefono().get(j).getTipo());
+                                System.out.println("Telefono "+j);
+                                System.out.print(" Codigo "+usuario.get(i).getTelefono().get(j).getCodigo());
+                                System.out.print(" Numreo "+usuario.get(i).getTelefono().get(j).getNumero());
+                                System.out.print(" Operadora "+usuario.get(i).getTelefono().get(j).getOperadora());
+                                System.out.print(" Tipo "+usuario.get(i).getTelefono().get(j).getTipo());
+                                System.out.println("");
                             }
                            i=usuario.size();
                         }
@@ -90,8 +93,14 @@ public class Principal {
             }
 
             @Override
-            public void eliminarUsuario(Usuario usuario) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            public void eliminarUsuario(String correo) {
+               for (int i = 0; i < usuario.size(); i++) {
+                        if (usuario.get(i).getCorreo().equalsIgnoreCase(correo)) {
+                             
+                            usuario.remove(i);
+                             
+                        }
+                    }
             }
         };
         do {
@@ -144,7 +153,8 @@ do{
 
                     }
                     if (op == 3) {
-
+                        clienteDao.eliminarUsuario(correo);
+                        op=5;
                     }
                     if (op == 4) {
                          clienteDao.mostrarTelefono(correo);
