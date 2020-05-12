@@ -9,6 +9,10 @@ public abstract class ImpleDao implements IClienteDao{
     
     public ImpleDao(){
         
+      
+        
+        
+        
     }
     
     

@@ -17,14 +17,7 @@ public class Controlador {
         this.usuario = usuario;
         this.telefono = telefono;
     }
-
-   
-   
-
-   
-
-
-
+    
     public void RegistrarUsuario() {
          
         System.out.println("*****Registro usuario*****");
@@ -38,9 +31,10 @@ public class Controlador {
         String correo = leer.next();
         System.out.println("Ingrese contrasena");
         String contrasena = leer.next();
-        List<Telefono> telf = null;
-        Usuario usuario = new Usuario(cedula, nombre, apellido, correo, contrasena, telf);
+          List<Telefono> telf = null;
+          Usuario usuario = new Usuario(cedula, nombre, apellido, correo, contrasena, telf);
         this.usuario.add(usuario);
+        
     }
 
 }
