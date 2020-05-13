@@ -1,4 +1,4 @@
-package ec.eud.ups.dao;
+package ec.edu.ups.dao;
 
 import ec.edu.ups.Modelo.Telefono;
 import java.util.List;

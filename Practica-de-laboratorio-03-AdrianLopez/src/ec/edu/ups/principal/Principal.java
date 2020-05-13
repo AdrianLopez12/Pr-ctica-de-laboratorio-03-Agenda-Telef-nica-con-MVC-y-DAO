@@ -1,25 +1,31 @@
-package ec.udu.ups.principal;
+package ec.edu.ups.principal;
 
 import ec.edu.ups.Modelo.Telefono;
 import java.util.Scanner;
 import ec.edu.ups.Modelo.Usuario;
 import java.util.ArrayList;
 import java.util.List;
-import ec.eud.ups.dao.IClienteDao;
-import ec.eud.ups.dao.ImpleDao;
+import ec.edu.ups.dao.IClienteDao;
+import ec.edu.ups.dao.*;
 import java.util.HashMap;
 import java.util.Map;
+import ec.edu.ups.controlador.*;
+
 
 public class Principal {
-
+//variables
     static byte op;
     static Scanner leer = new Scanner(System.in);
     List<Usuario> usuario = new ArrayList<>();
 
     public static void main(String[] args) {
-        
+        //Daos
 ImpleDao clienteDao=new ImpleDao();
-        
+       ImpleDaoTele DaoTelo=new ImpleDaoTele();
+//controladores
+ControladorUsuario contu=new ControladorUsuario();
+ControladorTelefono contT=new ControladorTelefono();
+
         
         do {
             System.out.println("1) Registrarse");
@@ -27,8 +33,9 @@ ImpleDao clienteDao=new ImpleDao();
             System.out.println("3) mostrar numeros de telefono por cedula");
             op = leer.nextByte();
             if (op == 1) {
-
-                clienteDao.crearUsuario();
+Usuario usu1;
+usu1=contu.CrearUsuario();
+                clienteDao.GuardarUsuario(usu1);
 
             }
             if (op == 2) {
