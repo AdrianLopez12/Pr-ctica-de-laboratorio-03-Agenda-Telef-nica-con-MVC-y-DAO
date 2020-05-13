@@ -74,28 +74,16 @@ Scanner leer=new Scanner(System.in);
             }
 
             @Override
-            public void actualizarUsuario(Usuario r) {
-                System.out.println("cuantos telefonos va a registrar?");
-                        byte nt=leer.nextByte();
-                        List <Telefono> telefono=new ArrayList<>();
-                        for (int i = 0; i < nt; i++) {
-                            System.out.println("Ingrese codigo");
-                        int codigo=leer.nextInt();
-                        System.out.println("Ingrese numero");
-                        String numero=leer.next();
-                        System.out.println("Ingrese tipo");
-                        String tipo=leer.next();
-                        System.out.println("Ingrese operadora");
-                        String operador=leer.next();
-                        Telefono tele=new Telefono(codigo, numero, tipo, operador);
+            public void actualizarUsuario(Usuario r,List<Telefono> telefono) {
+               
+                            r.setTelefono(telefono);
                         
-                        telefono.add(tele);
                         }
-                        r.setTelefono(telefono);
+                    
               
                 
                 
-            }
+            
 
             @Override
             public void eliminarUsuario(String cedula) {

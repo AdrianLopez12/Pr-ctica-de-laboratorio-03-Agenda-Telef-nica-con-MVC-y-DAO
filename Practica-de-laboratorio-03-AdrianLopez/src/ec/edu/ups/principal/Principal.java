@@ -54,8 +54,9 @@ do{
                     System.out.println("4) listar sus telefonos");
                     op = leer.nextByte();
                     if (op == 1) {
-                        
-                        clienteDao.actualizarUsuario(r);
+                        List<Telefono> telf;
+                        telf=contT.CrearTelefono();
+                        clienteDao.actualizarUsuario(r,telf);
                         
                         
                     }
