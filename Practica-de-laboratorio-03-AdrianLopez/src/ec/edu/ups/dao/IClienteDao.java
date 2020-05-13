@@ -8,7 +8,7 @@ public interface IClienteDao {
     public void GuardarUsuario(Usuario usuario);
     public List<Usuario> ObtenerUsuarios();
     public void mostrarTelefono(Usuario correo);
-    public void actualizarUsuario(Usuario usuario,List<Telefono> telefono);
+    public void actualizarTelfUsuario(Usuario usuario,List<Telefono> telefono);
     public void eliminarUsuario(String correo);
 
 }

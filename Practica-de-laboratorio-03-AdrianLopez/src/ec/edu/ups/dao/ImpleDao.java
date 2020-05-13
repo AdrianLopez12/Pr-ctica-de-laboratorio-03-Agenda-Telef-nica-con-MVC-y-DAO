@@ -1,4 +1,5 @@
 package ec.edu.ups.dao;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,102 +8,79 @@ import ec.edu.ups.Modelo.*;
 import java.util.HashMap;
 import java.util.Map;
 
+public class ImpleDao implements IClienteDao {
 
-public  class ImpleDao implements IClienteDao{
-    public List<Usuario> usuario=new ArrayList<>();
-Scanner leer=new Scanner(System.in);
+    public List<Usuario> usuario = new ArrayList<>();
+    Scanner leer = new Scanner(System.in);
 
-              static Map<String, Usuario> mapU =new HashMap<String, Usuario>();
-    static Map<Integer, String> mapT =new HashMap<Integer, String>();
-            @Override
-            public Usuario validarUsuario(String cedula, String contrasena) {
+    static Map<String, Usuario> mapU = new HashMap<String, Usuario>();
+    static Map<Integer, String> mapT = new HashMap<Integer, String>();
 
-                if (usuario.size() != 0) {
+    @Override
+    public Usuario validarUsuario(String cedula, String contrasena) {
 
-                    for (int i = 0; i < usuario.size(); i++) {
-                        if (usuario.get(i).getCorreo().equalsIgnoreCase(cedula) && usuario.get(i).getContrasena().equals(contrasena)) {
+        if (usuario.size() != 0) {
 
-                            return usuario.get(i);
+            for (int i = 0; i < usuario.size(); i++) {
+                if (usuario.get(i).getCorreo().equalsIgnoreCase(cedula) && usuario.get(i).getContrasena().equals(contrasena)) {
 
-                        }
-                    }
+                    return usuario.get(i);
 
                 }
-                System.out.println("Usuario invalido");
-                Usuario usu=null;
-                return usu;
-
             }
 
-            @Override
-            public void GuardarUsuario(Usuario usuario1) {
-               
+        }
+        System.out.println("Usuario invalido");
+        Usuario usu = null;
+        return usu;
 
-                
-                
-                this.usuario.add(usuario1);
-              
-                
+    }
 
-                
+    @Override
+    public void GuardarUsuario(Usuario usuario1) {
+
+        this.usuario.add(usuario1);
+
+    }
+
+    @Override
+    public List<Usuario> ObtenerUsuarios() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mostrarTelefono(Usuario cedula) {
+
+        if (cedula.getTelefono() != null) {
+            for (int j = 0; j < cedula.getTelefono().size(); j++) {
+                System.out.println("Telefono " + j);
+                System.out.print(" Codigo " + cedula.getTelefono().get(j).getCodigo());
+                System.out.print(" Numreo " + cedula.getTelefono().get(j).getNumero());
+                System.out.print(" Operadora " + cedula.getTelefono().get(j).getOperadora());
+                System.out.print(" Tipo " + cedula.getTelefono().get(j).getTipo());
+                System.out.println("");
             }
+        } else {
+            System.out.println("no hay telefonos registrados");
+        }
 
-            @Override
-            public List<Usuario> ObtenerUsuarios() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void actualizarTelfUsuario(Usuario r, List<Telefono> telefono) {
+
+        r.setTelefono(telefono);
+
+    }
+
+    @Override
+    public void eliminarUsuario(String cedula) {
+        for (int i = 0; i < usuario.size(); i++) {
+            if (usuario.get(i).getCorreo().equalsIgnoreCase(cedula)) {
+
+                usuario.remove(i);
+
             }
-
-            @Override
-            public void mostrarTelefono(Usuario cedula) {
-           
-                       if(cedula.getTelefono()!=null){
-                          for (int j = 0; j < cedula.getTelefono().size(); j++) {
-                                System.out.println("Telefono "+j);
-                                System.out.print(" Codigo "+cedula.getTelefono().get(j).getCodigo());
-                                System.out.print(" Numreo "+cedula.getTelefono().get(j).getNumero());
-                                System.out.print(" Operadora "+cedula.getTelefono().get(j).getOperadora());
-                                System.out.print(" Tipo "+cedula.getTelefono().get(j).getTipo());
-                                System.out.println("");
-                            } 
-                       }else{
-                           System.out.println("no hay telefonos registrados");
-                       }
-                            
-                           
-                        
-                    
-            }
-
-            @Override
-            public void actualizarUsuario(Usuario r,List<Telefono> telefono) {
-               
-                            r.setTelefono(telefono);
-                        
-                        }
-                    
-              
-                
-                
-            
-
-            @Override
-            public void eliminarUsuario(String cedula) {
-               for (int i = 0; i < usuario.size(); i++) {
-                        if (usuario.get(i).getCorreo().equalsIgnoreCase(cedula)) {
-                             
-                            usuario.remove(i);
-                             
-                        }
-                    }
-            }
-        };
-
-    
-
-  
- 
- 
-    
-    
-    
-
+        }
+    }
+};

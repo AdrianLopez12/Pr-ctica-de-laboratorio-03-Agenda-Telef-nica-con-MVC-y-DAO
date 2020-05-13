@@ -26,4 +26,27 @@ public class ControladorTelefono {
     }
                         return telefono;
     }
+    
+     public Telefono ModificarTelefono(List<Telefono> telf){
+         System.out.println("Codigo de telefono a modificar");
+         int codigo=leer.nextInt();
+         for (int i = 0; i < telf.size(); i++) {
+             if(telf.get(i).getCodigo()==codigo){
+                 System.out.println("Ingrese nuevo numero");
+                 String numero=leer.next();
+                 System.out.println("Ingrese nuevo tipo");
+                 String tipo=leer.next();
+                 System.out.println("Ingrese nueva operadora");
+                 String operadora=leer.next();
+                 telf.get(i).setNumero(numero);
+                 telf.get(i).setOperadora(operadora);
+                 telf.get(i).setTipo(tipo);
+                 return telf.get(i);
+                 
+                 
+         }
+         }
+         Telefono a=null;
+         return a;
+     }
 }
