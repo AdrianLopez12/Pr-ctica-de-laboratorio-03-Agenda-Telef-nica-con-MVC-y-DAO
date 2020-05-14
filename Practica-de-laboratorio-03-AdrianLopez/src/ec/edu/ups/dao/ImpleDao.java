@@ -2,19 +2,17 @@ package ec.edu.ups.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Scanner;   
 
 import ec.edu.ups.Modelo.*;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class ImpleDao implements IClienteDao {
 
     public List<Usuario> usuario = new ArrayList<>();
     Scanner leer = new Scanner(System.in);
 
-    static Map<String, Usuario> mapU = new HashMap<String, Usuario>();
-    static Map<Integer, String> mapT = new HashMap<Integer, String>();
+
 
     @Override
     public Usuario validarUsuario(String cedula, String contrasena) {
@@ -44,8 +42,19 @@ public class ImpleDao implements IClienteDao {
     }
 
     @Override
-    public List<Usuario> ObtenerUsuarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void EliminarTelefono(Telefono t, Usuario r) {
+        
+        
+        for (int i = 0; i < r.getTelefono().size(); i++) {
+            if(t.getCodigo()==r.getTelefono().get(i).getCodigo()){
+                r.getTelefono().remove(i);
+            }
+            
+            
+        }
+        
+        
+        
     }
 
     @Override

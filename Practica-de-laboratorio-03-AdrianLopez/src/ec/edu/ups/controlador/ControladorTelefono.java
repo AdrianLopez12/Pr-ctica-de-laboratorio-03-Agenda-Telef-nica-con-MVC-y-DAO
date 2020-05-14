@@ -49,4 +49,21 @@ public class ControladorTelefono {
          Telefono a=null;
          return a;
      }
+     public Telefono BuscarTelefono(List<Telefono> t){
+         System.out.println("Ingrese codigo del telefono");
+         int codigoT=leer.nextInt();
+         for (int i = 0; i < t.size(); i++) {
+             
+             if (t.get(0).getCodigo()==codigoT){
+             
+                 return t.get(i);
+         }
+             
+         }
+         Telefono te=null;
+         return te;
+         
+         
+         
+     }
 }

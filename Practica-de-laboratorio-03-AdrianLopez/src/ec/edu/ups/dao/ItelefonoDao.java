@@ -7,7 +7,7 @@ public interface ItelefonoDao {
     
     public void mostrarTelefono(String correo);
     public void actualizarUsuario(List<Telefono> usuario, String correo);
-    public void eliminarUsuario(String correo);
+    public void eliminarTelefono(Telefono t);
     
     
 }

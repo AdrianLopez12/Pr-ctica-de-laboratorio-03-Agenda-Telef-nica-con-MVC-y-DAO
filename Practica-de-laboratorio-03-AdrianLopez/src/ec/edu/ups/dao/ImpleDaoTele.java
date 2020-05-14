@@ -16,8 +16,10 @@ public class ImpleDaoTele implements ItelefonoDao{
     }
 
     @Override
-    public void eliminarUsuario(String correo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void eliminarTelefono(Telefono t) {
+       
+        
+        
     }
     
 }

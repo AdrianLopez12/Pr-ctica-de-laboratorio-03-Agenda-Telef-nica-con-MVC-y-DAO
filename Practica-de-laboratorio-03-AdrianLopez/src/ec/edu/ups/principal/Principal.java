@@ -30,6 +30,7 @@ public class Principal {
             System.out.println("1) Registrarse");
             System.out.println("2) Iniciar secion");
             System.out.println("3) mostrar numeros de telefono por cedula");
+            System.out.println("4) Salir");
             op = leer.nextByte();
             if (op == 1) {
                 Usuario usu1;
@@ -51,6 +52,7 @@ public class Principal {
                         System.out.println("2) modificar");
                         System.out.println("3) Eliminar");
                         System.out.println("4) listar sus telefonos");
+                        System.out.println("5) Regresar logueo");
                         op = leer.nextByte();
                         if (op == 1) {
                             List<Telefono> telf;
@@ -65,8 +67,12 @@ public class Principal {
                         
                         }
                         if (op == 3) {
-                            clienteDao.eliminarUsuario(correo);
-                            op = 5;
+                            Telefono te;
+                            te=contT.BuscarTelefono(r.getTelefono());
+                           clienteDao.EliminarTelefono(te, r);
+                            
+                            
+                           
                         }
                         if (op == 4) {
                            
@@ -77,8 +83,7 @@ public class Principal {
 
             }
             if (op == 3) {
-                System.out.println("ingrese correo");
-                String correo = leer.next();
+                contu.ListarTelefonosPorCedula();
             }
 
         } while (op != 4);
