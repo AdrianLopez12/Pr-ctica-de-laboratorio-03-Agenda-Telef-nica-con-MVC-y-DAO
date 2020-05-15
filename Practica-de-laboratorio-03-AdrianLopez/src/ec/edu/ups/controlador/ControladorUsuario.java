@@ -1,7 +1,7 @@
 package ec.edu.ups.controlador;
 
-import ec.edu.ups.Modelo.Telefono;
-import ec.edu.ups.Modelo.Usuario;
+import ec.edu.ups.modelos.Telefono;
+import ec.edu.ups.modelos.Usuario;
 import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;

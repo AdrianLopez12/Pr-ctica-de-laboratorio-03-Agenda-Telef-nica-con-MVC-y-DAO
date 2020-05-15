@@ -1,4 +1,4 @@
-package ec.edu.ups.Modelo;
+package ec.edu.ups.modelos;
 
 public class Telefono {
 

@@ -1,6 +1,6 @@
-package ec.edu.ups.Modelo;
+package ec.edu.ups.modelos;
 
-import ec.edu.ups.Modelo.Telefono;
+import ec.edu.ups.modelos.Telefono;
 import java.util.List;
 
 public class Usuario {

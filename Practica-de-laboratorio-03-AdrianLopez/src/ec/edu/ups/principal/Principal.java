@@ -1,8 +1,8 @@
 package ec.edu.ups.principal;
 
-import ec.edu.ups.Modelo.Telefono;
+import ec.edu.ups.modelos.Telefono;
 import java.util.Scanner;
-import ec.edu.ups.Modelo.Usuario;
+import ec.edu.ups.modelos.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import ec.edu.ups.dao.IClienteDao;

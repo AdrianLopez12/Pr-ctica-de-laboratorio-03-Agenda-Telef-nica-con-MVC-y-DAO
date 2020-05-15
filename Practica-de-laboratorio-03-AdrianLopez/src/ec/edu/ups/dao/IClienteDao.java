@@ -1,7 +1,8 @@
 package ec.edu.ups.dao;
 
+import ec.edu.ups.modelos.Telefono;
+import ec.edu.ups.modelos.Usuario;
 import java.util.List;
-import ec.edu.ups.Modelo.*;
 
 public interface IClienteDao {
 

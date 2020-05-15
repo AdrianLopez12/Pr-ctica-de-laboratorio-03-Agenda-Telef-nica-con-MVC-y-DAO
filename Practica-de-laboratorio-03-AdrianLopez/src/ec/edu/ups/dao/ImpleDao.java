@@ -1,10 +1,11 @@
 package ec.edu.ups.dao;
 
+import ec.edu.ups.modelos.Usuario;
+import ec.edu.ups.modelos.Telefono;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import ec.edu.ups.Modelo.*;
 
 public class ImpleDao implements IClienteDao {
 
