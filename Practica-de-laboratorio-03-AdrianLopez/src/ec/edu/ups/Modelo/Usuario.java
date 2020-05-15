@@ -1,15 +1,18 @@
-
 package ec.edu.ups.Modelo;
+
 import ec.edu.ups.Modelo.Telefono;
 import java.util.List;
+
 public class Usuario {
+
     //private Telefono telefono;
     private String cedula;
     private String nombre;
     private String apellido;
     private String correo;
     private String contrasena;
-  List<Telefono> telefono;
+    List<Telefono> telefono;
+
     public Usuario() {
     }
 
@@ -19,10 +22,9 @@ public class Usuario {
         this.apellido = apellido;
         this.correo = correo;
         this.contrasena = contrasena;
-        
+
     }
 
-    
     public List<Telefono> getTelefono() {
         return telefono;
     }
@@ -31,9 +33,6 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-   
-
-   
     public String getCedula() {
         return cedula;
     }
@@ -73,6 +72,5 @@ public class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
-    
+
 }

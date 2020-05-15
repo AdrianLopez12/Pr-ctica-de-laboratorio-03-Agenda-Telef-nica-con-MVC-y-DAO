@@ -62,26 +62,24 @@ public class Principal {
 
                         }
                         if (op == 2) {
-                            
-                        List<Telefono> t=r.getTelefono();
-                        contT.ModificarTelefono(t);
-                        
+
+                            List<Telefono> t = r.getTelefono();
+                            contT.ModificarTelefono(t);
+
                         }
                         if (op == 3) {
                             Telefono te;
-                            te=contT.BuscarTelefono(r.getTelefono());
-                           clienteDao.EliminarTelefono(te, r);
-                            
-                            
-                           
+                            te = contT.BuscarTelefono(r.getTelefono());
+                            clienteDao.EliminarTelefono(te, r);
+
                         }
                         if (op == 4) {
-                           
+
                             clienteDao.mostrarTelefono(r);
                         }
                         if (op == 5) {
-                           op=6;
-                                
+                            op = 6;
+
                         }
                     } while (op != 6);
                 }
@@ -92,7 +90,7 @@ public class Principal {
             }
             if (op == 4) {
                 clienteDao.mostrarTelefonos();
-                }
+            }
 
         } while (op != 5);
     }

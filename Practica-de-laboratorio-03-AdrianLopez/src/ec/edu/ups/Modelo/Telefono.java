@@ -1,5 +1,7 @@
 package ec.edu.ups.Modelo;
+
 public class Telefono {
+
     private int codigo;
     private String numero;
     private String tipo;
@@ -46,5 +48,5 @@ public class Telefono {
     public void setOperadora(String operadora) {
         this.operadora = operadora;
     }
-    
+
 }
