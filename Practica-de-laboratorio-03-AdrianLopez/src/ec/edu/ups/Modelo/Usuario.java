@@ -13,13 +13,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String cedula, String nombre, String apellido, String correo, String contrasena, List<Telefono> telefono) {
+    public Usuario(String cedula, String nombre, String apellido, String correo, String contrasena) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.contrasena = contrasena;
-        this.telefono = telefono;
+        
     }
 
     

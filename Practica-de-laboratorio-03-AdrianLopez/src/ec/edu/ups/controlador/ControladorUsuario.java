@@ -21,8 +21,8 @@ public class ControladorUsuario {
                 String correo = leer.next();
                 System.out.println("Ingrese contrasena");
                 String contrasena = leer.next();
-                List<Telefono> telf = null;
-                Usuario usu=new Usuario(cedula, nombre, apellido, correo, contrasena, telf);
+                //List<Telefono> telf = null;
+                Usuario usu=new Usuario(cedula, nombre, apellido, correo, contrasena);
                  mapU.put(cedula, usu);
 
                  return usu;

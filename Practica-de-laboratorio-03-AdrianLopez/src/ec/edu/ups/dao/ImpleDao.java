@@ -8,7 +8,7 @@ import ec.edu.ups.Modelo.*;
 
 
 public class ImpleDao implements IClienteDao {
-
+public List<Telefono> telefonol = new ArrayList<>();
     public List<Usuario> usuario = new ArrayList<>();
     Scanner leer = new Scanner(System.in);
 
@@ -29,8 +29,7 @@ public class ImpleDao implements IClienteDao {
 
         }
         System.out.println("Usuario invalido");
-        Usuario usu = null;
-        return usu;
+        return null;
 
     }
 
@@ -79,6 +78,13 @@ public class ImpleDao implements IClienteDao {
     public void actualizarTelfUsuario(Usuario r, List<Telefono> telefono) {
 
         r.setTelefono(telefono);
+        
+        for (int i = 0; i < telefono.size(); i++) {
+            
+            Telefono t=telefono.get(i);
+      telefonol.add(t);      
+        }
+      
 
     }
 
@@ -92,4 +98,28 @@ public class ImpleDao implements IClienteDao {
             }
         }
     }
+    @Override
+   public void listarTelefonos(){
+       if (usuario.size()!=0){
+           for (int i = 0; i < usuario.size(); i++) {
+               System.out.print("Uusario "+i);
+               System.out.print(" Numreo "+usuario.get(i).getTelefono().get(i).getNumero());
+               System.out.print(" Operadora "+usuario.get(i).getTelefono().get(i).getOperadora());
+               System.out.print(" Tipo "+usuario.get(i).getTelefono().get(i).getTipo());
+           }
+       }
+       
+   }
+   @Override
+   public void mostrarTelefonos(){
+       for (int i = 0; i < telefonol.size(); i++) {
+           System.out.println("Telefono "+i);
+           System.out.print(" codigo "+telefonol.get(i).getCodigo());
+           System.out.print(" numero "+telefonol.get(i).getNumero());
+           System.out.print(" operadora "+telefonol.get(i).getOperadora());
+           System.out.print(" tipo "+telefonol.get(i).getTipo());
+           
+       }
+       
+   }
 };

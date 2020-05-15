@@ -21,7 +21,7 @@ public class Principal {
     public static void main(String[] args) {
         //Daos
         ImpleDao clienteDao = new ImpleDao();
-        ImpleDaoTele DaoTelo = new ImpleDaoTele();
+
 //controladores
         ControladorUsuario contu = new ControladorUsuario();
         ControladorTelefono contT = new ControladorTelefono();
@@ -29,8 +29,9 @@ public class Principal {
         do {
             System.out.println("1) Registrarse");
             System.out.println("2) Iniciar secion");
-            System.out.println("3) mostrar numeros de telefono por cedula");
-            System.out.println("4) Salir");
+            System.out.println("3) Mostrar numeros de telefono por cedula");
+            System.out.println("4) Listar telefonos");
+            System.out.println("5) Salir");
             op = leer.nextByte();
             if (op == 1) {
                 Usuario usu1;
@@ -78,14 +79,21 @@ public class Principal {
                            
                             clienteDao.mostrarTelefono(r);
                         }
-                    } while (op != 5);
+                        if (op == 5) {
+                           op=6;
+                                
+                        }
+                    } while (op != 6);
                 }
 
             }
             if (op == 3) {
                 contu.ListarTelefonosPorCedula();
             }
+            if (op == 4) {
+                clienteDao.mostrarTelefonos();
+                }
 
-        } while (op != 4);
+        } while (op != 5);
     }
 }

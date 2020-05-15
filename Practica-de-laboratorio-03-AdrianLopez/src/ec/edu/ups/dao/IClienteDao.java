@@ -10,5 +10,7 @@ public interface IClienteDao {
     public void mostrarTelefono(Usuario correo);
     public void actualizarTelfUsuario(Usuario usuario,List<Telefono> telefono);
     public void eliminarUsuario(String correo);
+    public void listarTelefonos();
+    public void mostrarTelefonos();
 
 }
