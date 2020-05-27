@@ -66,6 +66,8 @@ public class ImpleDao implements IClienteDao {
         } else {
             System.out.println("no hay telefonos registrados");
         }
+        System.out.println("Presione cualquier tecla para seguir");
+        String h =leer.next();
 
     }
 
@@ -116,6 +118,8 @@ public class ImpleDao implements IClienteDao {
             System.out.print(" tipo " + telefonol.get(i).getTipo());
 
         }
+        
+        
 
     }
 };

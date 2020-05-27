@@ -86,9 +86,9 @@ public class Principal {
 
                         }
                         if (op == 4) {
-                               
+                               p.listarT();
                             clienteDao.mostrarTelefono(r);
-                            p.listarT();
+                            
                         }
                         if (op == 5) {
                             op = 6;
