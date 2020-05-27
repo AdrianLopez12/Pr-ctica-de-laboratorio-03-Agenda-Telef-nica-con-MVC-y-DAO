@@ -180,7 +180,7 @@ public class Pantalla {
         
         pantallaInicio.setVisible(false);
         pantallaEliminarT.removeAll();
-        pantallaEliminarT.setTitle("Modificar");
+        pantallaEliminarT.setTitle("Eliminar");
         
         Panel p1 = new Panel();
         Label inicio = new Label("ELIMINAR TELEFONO");
